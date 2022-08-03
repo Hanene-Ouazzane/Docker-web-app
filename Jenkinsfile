@@ -1,7 +1,7 @@
 node {
     checkout scm
 
-    docker.withRegistry('https://hub.docker.com/', 'dockerHub') {
+    docker.withRegistry('docker login index.docker.io', 'dockerHub') {
 
         def customImage = docker.build("pushautomation:${env.BUILD_ID}")
 
